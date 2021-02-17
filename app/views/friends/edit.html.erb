@@ -1,0 +1,23 @@
+<% provide(:button_text, 'Update Friend')%>
+<div class="container">
+    <div class="card text-center" style="margin-top: 50px;margin-left:100px; margin-right:100px;">
+        <div class="card-header">
+            Update your profile 
+        </div>
+        <div class="card-body">
+            <!-- <div class="gravatar_edit">
+                <%= gravatar_for @friend %>
+                <a href="https://gravatar.com/emails"
+                target="_blank">Change</a>
+                </div> -->
+                <br>
+            <%= render 'layouts/form' , friend: @friend %>     
+        </div>
+        <div class="card-footer text-muted" style="padding-left:500px;">
+            <%= link_to 'Home', root_path %>
+            <%= link_to 'About' , about_path %>
+            <%= link_to 'Back' , friends_path %>
+        </div>
+
+    </div>
+</div>

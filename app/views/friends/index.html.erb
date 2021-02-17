@@ -1,0 +1,35 @@
+ <div class="container">
+ <h1 style="margin-top: 40px;"> List Of Friends</h1>
+ <br>
+
+<ul>
+    <table class="table">
+        <thead class="table">
+            <th> Name </th>
+            <th> Email </th>
+            <th> Phone </th>
+            <th> Twitter </th>
+            <th> Actions </th>
+            <th> </th>
+        </thead>
+        <% @friends.each do |friend| %>
+        <tbody>
+            <tr>
+                <td> <li><%= link_to friend.first_name + ' ' +friend.last_name, friend_path(friend) %> </td>
+                <td> <%= friend.email %> </td>
+                <td> <%= friend.phone %> </td>
+                <td> <%= friend.twitter %> </td>
+                <td> <button><%= link_to 'Edit', edit_friend_path(friend) %></button> </td>
+                <td> <button><%= link_to 'Delete', friend, method: :delete, data:{ confirm:'Are you sure?' } %></button> </td>
+            </tr>
+        </tbody>
+        <%end%>
+    </table>
+    
+    
+    
+</ul>
+
+<%= link_to 'Back', friends_new_path %>
+
+</div>
